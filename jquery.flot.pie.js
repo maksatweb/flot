@@ -122,6 +122,9 @@ More detail and specific examples can be found in the included HTML file.
 				if (options.grid.hoverable) {
 					eventHolder.unbind("mousemove").mousemove(onMouseMove);
 				}
+        if (options.grid.hoverable) {
+          eventHolder.unbind("mouseleave").bind('mouseleave', onMouseLeave);
+        }
 				if (options.grid.clickable) {
 					eventHolder.unbind("click").click(onClick);
 				}
@@ -641,6 +644,10 @@ More detail and specific examples can be found in the included HTML file.
 		function onMouseMove(e) {
 			triggerClickHoverEvent("plothover", e);
 		}
+
+    function onMouseLeave() {
+      unhighlight(null);
+    }
 
 		function onClick(e) {
 			triggerClickHoverEvent("plotclick", e);
