@@ -771,6 +771,11 @@ More detail and specific examples can be found in the included HTML file.
 				octx.fill();
 			}
 		}
+
+    // Expose some of the internal API
+    plot.pie = {};
+    plot.pie.highlight = highlight;
+    plot.pie.unhighlight = unhighlight;
 	} // end init (plugin body)
 
 	// define pie specific options and their default values
